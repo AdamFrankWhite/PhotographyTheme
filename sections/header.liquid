@@ -119,6 +119,9 @@
       assign localization_forms = true
     endif
   -%}
+  {% comment %} split nav links in left/right columns {% endcomment %}
+  {% assign nav_links = linklists.main-menu.links %}
+  {% assign half_size = nav_links.size | divided_by: 2 %}
   <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
     {%- liquid
       if section.settings.menu != blank
@@ -131,21 +134,26 @@
     -%}
 
 
-    {%- liquid
-      if section.settings.menu != blank
-        if section.settings.menu_type_desktop == 'dropdown'
-          render 'header-dropdown-menu'
-        elsif section.settings.menu_type_desktop != 'drawer'
-          render 'header-mega-menu'
-        endif
-      endif
-    %}
+  
 
+    <header class="site-header" role="banner">
+      <div class="header-wrapper">
+        
+        {% assign nav_links = linklists.main-menu.links %}
+        {% assign half_size = nav_links.size | divided_by: 2 %}
+        
+        <!-- Left Navigation -->
+        <nav class="header-nav left-nav" role="navigation">
+          <ul class="nav-list">
+            {% for link in nav_links limit: half_size %}
+              <li class="nav-item">
+                <a href="{{ link.url }}" class="nav-link">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
     
-      {%- if request.page_type == 'index' -%}
-        <h1 class="header__heading">
-      {%- endif -%}
-          <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+        <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
             {%- if settings.logo != blank -%}
               <div class="header__heading-logo-wrapper">
                 {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
@@ -166,12 +174,67 @@
               <span class="h2">{{ shop.name }}</span>
             {%- endif -%}
           </a>
-      {%- if request.page_type == 'index' -%}
-        </h1>
-      {%- endif -%}
+    
+        <!-- Right Navigation -->
+        <nav class="header-nav right-nav" role="navigation">
+          <ul class="nav-list">
+            {% for link in nav_links offset: half_size %}
+              <li class="nav-item">
+                <a href="{{ link.url }}" class="nav-link">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+        
+      </div>
+    </header>
+    
+    <style>
+      .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+      }
+      
+      .header-logo {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+    
+      .header-nav {
+        flex: 1;
+      }
+    
+      .nav-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+      }
+    
+      .nav-item a {
+        text-decoration: none;
+        color: #000; /* Adjust color as needed */
+      }
+    
+      .left-nav {
+        justify-content: flex-start;
+      }
+    
+      .right-nav {
+        justify-content: flex-end;
+      }
+    
+      .nav-item {
+        display: inline;
+      }
+    </style>
+    
    
 
-    <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
+    {% comment %} <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
       <div class="desktop-localization-wrapper">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
           <localization-form class="small-hide medium-hide" data-prevent-hide>
@@ -245,7 +308,7 @@
           </div>
         {%- endif -%}
       </a>
-    </div>
+    </div> {% endcomment %}
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
