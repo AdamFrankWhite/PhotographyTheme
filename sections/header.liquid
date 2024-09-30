@@ -79,7 +79,11 @@
       align-items: center;
       padding: 10px 20px;
     }
-    
+    .header {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
     .header-logo {
       flex: 1;
       display: flex;
@@ -108,10 +112,17 @@
       justify-content: flex-start;
     }
   
+
     .right-nav {
       justify-content: flex-end;
     }
+  @media screen and (max-width: 989px) {
+    .left-nav, .right-nav {
+    display: none;
+    }
   
+
+  }
     .nav-item {
       display: inline;
     }
@@ -167,7 +178,7 @@
   {% comment %} split nav links in left/right columns {% endcomment %}
   {% assign nav_links = linklists.main-menu.links %}
   {% assign half_size = nav_links.size | divided_by: 2 %}
-  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
+  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} {% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
     {%- liquid
       if section.settings.menu != blank
         render 'header-drawer'
