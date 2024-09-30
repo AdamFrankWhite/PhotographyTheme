@@ -2452,9 +2452,10 @@ input[type='checkbox'] {
   color: rgb(var(--color-foreground));
 }
 
-.header__heading-link .h2 {
+.header__heading-link .h1, .header__heading-link .h2{
   line-height: 1;
-  color: rgba(var(--color-foreground), 0.75);
+  /* color: rgba(var(--color-foreground), 0.75); */
+  color: #fff;
 }
 
 .header__heading-logo {
