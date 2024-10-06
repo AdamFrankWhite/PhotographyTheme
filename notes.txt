@@ -1,0 +1,1 @@
+Keeping changes to css in style tags in liquid component, to avoid muddying the original css and to keep changes modular and obvious within liquid component
