@@ -94,7 +94,7 @@
   }
 
   .banner--large:not(.banner--adapt) {
-    min-height: 72rem;
+    min-height: 80rem;
   }
 
   .banner__content.banner__content--top-left {
@@ -164,6 +164,11 @@
   left: 0;
   top: 0;
   width: 100%;
+}
+
+.banner__media > img {
+  object-fit: cover;
+  object-position: bottom;
 }
 
 .banner__media-half {
@@ -431,6 +436,8 @@
   .banner__box {
     max-width: 90rem;
   }
+
+  
 }
 
 .banner__heading {
