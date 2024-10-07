@@ -1,6 +1,12 @@
 <style>
-
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .parent {
+    width: 80%;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(12, 1fr);
@@ -224,23 +230,23 @@
     {% endschema %}
 
 <div class="parent">
-    <img class="image1" src="{{ section.settings.image1 | img_url: 'large' }}" alt="Image 1"/>
-    <img class="image2" src="{{ section.settings.image2 | img_url: 'large' }}" alt="Image 2" />
-    <img class="image3" src="{{ section.settings.image3 | img_url: 'large' }}" alt="Image 3" />
-    <img class="image4" src="{{ section.settings.image4 | img_url: 'large' }}" alt="Image 4" />
-    <img class="image5" src="{{ section.settings.image5 | img_url: 'large' }}" alt="Image 5" />
-    <img class="image6" src="{{ section.settings.image6 | img_url: 'large' }}" alt="Image 6" />
-    <img class="image7" src="{{ section.settings.image7 | img_url: 'large' }}" alt="Image 7" />
-    <img class="image8" src="{{ section.settings.image8 | img_url: 'large' }}" alt="Image 8" />
-    <img class="image9" src="{{ section.settings.image9 | img_url: 'large' }}" alt="Image 9" />
-    <img class="image10" src="{{ section.settings.image10 | img_url: 'large' }}" alt="Image 10" />
-    <img class="image11" src="{{ section.settings.image11 | img_url: 'large' }}" alt="Image 11" />
-    <img class="image12" src="{{ section.settings.image12 | img_url: 'large' }}" alt="Image 12" />
-    <img class="image13" src="{{ section.settings.image13 | img_url: 'large' }}" alt="Image 13" />
-    <img class="image14" src="{{ section.settings.image14 | img_url: 'large' }}" alt="Image 14" />
-    <img class="image15" src="{{ section.settings.image15 | img_url: 'large' }}" alt="Image 15" />
-    <img class="image16" src="{{ section.settings.image16 | img_url: 'large' }}" alt="Image 16" />
-    <img class="image17" src="{{ section.settings.image17 | img_url: 'large' }}" alt="Image 17" />
-    <img class="image18" src="{{ section.settings.image18 | img_url: 'large' }}" alt="Image 18" />
+   <div class="image1"><img src="{{ section.settings.image1 | img_url: 'large' }}" alt="Image 1"/></div>
+   <div class="image2"><img src="{{ section.settings.image2 | img_url: 'large' }}" alt="Image 2" /></div>
+   <div class="image3"><img src="{{ section.settings.image3 | img_url: 'large' }}" alt="Image 3" /></div>
+   <div class="image4"><img src="{{ section.settings.image4 | img_url: 'large' }}" alt="Image 4" /></div>
+   <div class="image5"><img src="{{ section.settings.image5 | img_url: 'large' }}" alt="Image 5" /></div>
+   <div class="image6"><img src="{{ section.settings.image6 | img_url: 'large' }}" alt="Image 6" /></div>
+   <div class="image7"><img src="{{ section.settings.image7 | img_url: 'large' }}" alt="Image 7" /></div>
+   <div class="image8"><img src="{{ section.settings.image8 | img_url: 'large' }}" alt="Image 8" /></div>
+   <div class="image9"><img src="{{ section.settings.image9 | img_url: 'large' }}" alt="Image 9" /></div>
+   <div class="image10"><img src="{{ section.settings.image10 | img_url: 'large' }}" alt="Image 10" /></div>
+   <div class="image11"><img src="{{ section.settings.image11 | img_url: 'large' }}" alt="Image 11" /></div>
+   <div class="image12"><img src="{{ section.settings.image12 | img_url: 'large' }}" alt="Image 12" /></div>
+   <div class="image13"><img src="{{ section.settings.image13 | img_url: 'large' }}" alt="Image 13" /></div>
+   <div class="image14"><img src="{{ section.settings.image14 | img_url: 'large' }}" alt="Image 14" /></div>
+   <div class="image15"><img src="{{ section.settings.image15 | img_url: 'large' }}" alt="Image 15" /></div>
+   <div class="image16"><img src="{{ section.settings.image16 | img_url: 'large' }}" alt="Image 16" /></div>
+   <div class="image17"><img src="{{ section.settings.image17 | img_url: 'large' }}" alt="Image 17" /></div>
+   <div class="image18"><img src="{{ section.settings.image18 | img_url: 'large' }}" alt="Image 18" /></div>
 </div>
     
