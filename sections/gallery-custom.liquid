@@ -179,6 +179,44 @@ img {
   text-decoration: none;
   cursor: pointer;
 }
+
+
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #FFF;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: #0095ff transparent;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
 </style>
 
 {% schema %}
@@ -329,12 +367,19 @@ img {
     </div> 
     {% comment %} Modal {% endcomment %}
     <div id="image-modal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="img01" src="" />
+        <span class="close">&times;</span>
+        <span id="spinner" class="loader"></span>
+        <img class="modal-content" id="img01" src="" onload="hideSpinner()" style="display: none;" />
     </div>
 </div>
 
 <script>
+    // show/hide spinner
+function hideSpinner() {
+    document.getElementById('spinner').style.display = 'none';
+    document.getElementById('img01').style.display = 'block';
+    console.log("hide/show spinner/image")
+}
     // Get the modal
 var modal = document.getElementById("image-modal");
 
@@ -350,6 +395,7 @@ for (var i = 0; i < img.length; i++) {
   }
 }
 
+
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
@@ -357,4 +403,6 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
   modal.style.display = "none";
 }
+
+
 </script>
