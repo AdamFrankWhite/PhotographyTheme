@@ -1,64 +1,98 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "image_banner": {
       "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "button"
-      ],
       "settings": {
-        "image_overlay_opacity": 40,
+        "image": "shopify://shop_images/mandarin-reddish-vale-wide_8a08501c-2be6-41df-a8b8-48bc97fc3050.jpg",
+        "image_overlay_opacity": 10,
         "image_height": "large",
         "desktop_content_position": "bottom-center",
         "show_text_box": false,
-        "image_behavior": "none",
         "desktop_content_alignment": "center",
         "color_scheme": "scheme-3",
+        "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
     },
+    "image_with_text_fAFFNz": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_jXNeHV": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>British Birds Calendar 2025</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_WPw4tx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Enjoy a year of beautiful bird photography with my 2025 British Birds calendar. Each month features a different bird, captured from sites around the UK. </p><p>Whether you’re a bird enthusiast or simply enjoy nature, this calendar is a great addition to the home or office. It's also a thoughtful gift for friends and family who  appreciate wildlife. Stay organized and inspired every month with the calming presence of our feathered friends. </p><p>Get your British Birds calendar today!</p>",
+            "text_style": "body"
+          }
+        },
+        "button_pUcHWU": {
+          "type": "button",
+          "settings": {
+            "button_label": "Order Now",
+            "button_link": "shopify://products/wall-calendars",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_jXNeHV",
+        "text_WPw4tx",
+        "button_pUcHWU"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/6c9feb04-653a-4a6d-8a25-8667e6aedbe1.jpg",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "gallery-custom": {
-      "type": "gallery-custom"
+      "type": "gallery-custom",
+      "settings": {
+      }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "Prints, Posters and More",
         "heading_size": "h2",
-        "description": "",
+        "description": "<p>Buy wall art and gifts for nature-lovers and help support my work.</p>",
         "show_description": false,
         "description_style": "body",
         "collection": "all",
         "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -66,6 +100,7 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
       }
@@ -73,6 +108,7 @@
   },
   "order": [
     "image_banner",
+    "image_with_text_fAFFNz",
     "gallery-custom",
     "featured_collection"
   ]
