@@ -140,7 +140,7 @@ img {
     .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 3; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -148,13 +148,24 @@ img {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
+.modal.show {
+  display: block; /* Show the modal */
+  opacity: 1; /* Fully visible */
+  transition: opacity 0.3s ease; /* Matches the fade duration */
+}
+
+.modal.hide {
+  opacity: 0; /* Hidden with transition */
+  transition: opacity 0.3s ease; /* Matches the fade duration */
+}
 /* Modal Content (image) */
 .modal-content {
   margin: auto;
   display: block;
-  
   height: 100%;
   width: auto;
   max-width: 1480px;
@@ -397,6 +408,8 @@ var captionText = document.getElementById("caption");
 for (var i = 0; i < img.length; i++) {
   img[i].onclick = function(){
     modal.style.display = "block";
+    modal.classList.remove('hide'); // Remove the hide class if present
+    modal.classList.add('show'); // Add the show class to trigger fade-in
     modalImg.src = this.src.replace("-compressed.jpg", "-large.jpg");
   }
 }
@@ -407,9 +420,16 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-  modal.style.display = "none";
+    modal.classList.remove('show'); // Remove the show class
+  modal.classList.add('hide'); // Add the hide class to trigger fade-out
+
+  // Wait for the fade-out transition before hiding the modal
+  setTimeout(function() {
+    modal.style.display = 'none';
+    showSpinner()
+  }, 300); // Duration should match the CSS transition time (0.5s)
   // toggle loader back to show
-showSpinner()
+   
 }
 
 
