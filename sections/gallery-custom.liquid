@@ -3,16 +3,30 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: translate3d(0, 0, 1px); /* important to avoid oversharpening when downscaling image */
 }
-.parent {
-    width: 80%;
+
+.wrapper {
+    padding: 5rem 5%;
+    background-color: #082B1A;
+}
+.gallery-image:hover {
+    cursor:zoom-in;
+}
+.gallery-container {
+    width: 100%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    gap: 8px;
+    grid-template-rows: repeat(12, 0.3fr);
+    gap: 1rem;
 }
     
+@media screen and (min-width: 1400px) {
+    .gallery-container {
+        width: 90%;
+}
+}
 .image1 {
     grid-column: span 3 / span 3;
     grid-row: span 5 / span 5;
@@ -122,7 +136,49 @@ img {
     grid-row-start: 11;
 }
         
+    /* The Modal (background) */
+    .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
 
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  
+  height: 100%;
+  width: auto;
+  max-width: 1480px;
+  z-index: 4;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  z-index: 5;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
 </style>
 
 {% schema %}
@@ -229,24 +285,76 @@ img {
     }
     {% endschema %}
 
-<div class="parent">
-   <div class="image1"><img src="{{ section.settings.image1 | img_url: 'original' }}" alt="Image 1"/></div>
-   <div class="image2"><img src="{{ section.settings.image2 | img_url: 'original' }}" alt="Image 2" /></div>
-   <div class="image3"><img src="{{ section.settings.image3 | img_url: 'original' }}" alt="Image 3" /></div>
-   <div class="image4"><img src="{{ section.settings.image4 | img_url: 'original' }}" alt="Image 4" /></div>
-   <div class="image5"><img src="{{ section.settings.image5 | img_url: 'original' }}" alt="Image 5" /></div>
-   <div class="image6"><img src="{{ section.settings.image6 | img_url: 'original' }}" alt="Image 6" /></div>
-   <div class="image7"><img src="{{ section.settings.image7 | img_url: 'original' }}" alt="Image 7" /></div>
-   <div class="image8"><img src="{{ section.settings.image8 | img_url: 'original' }}" alt="Image 8" /></div>
-   <div class="image9"><img src="{{ section.settings.image9 | img_url: 'original' }}" alt="Image 9" /></div>
-   <div class="image10"><img src="{{ section.settings.image10 | img_url: 'original' }}" alt="Image 10" /></div>
-   <div class="image11"><img src="{{ section.settings.image11 | img_url: 'original' }}" alt="Image 11" /></div>
-   <div class="image12"><img src="{{ section.settings.image12 | img_url: 'original' }}" alt="Image 12" /></div>
-   <div class="image13"><img src="{{ section.settings.image13 | img_url: 'original' }}" alt="Image 13" /></div>
-   <div class="image14"><img src="{{ section.settings.image14 | img_url: 'original' }}" alt="Image 14" /></div>
-   <div class="image15"><img src="{{ section.settings.image15 | img_url: 'original' }}" alt="Image 15" /></div>
-   <div class="image16"><img src="{{ section.settings.image16 | img_url: 'original' }}" alt="Image 16" /></div>
-   <div class="image17"><img src="{{ section.settings.image17 | img_url: 'original' }}" alt="Image 17" /></div>
-   <div class="image18"><img src="{{ section.settings.image18 | img_url: 'original' }}" alt="Image 18" /></div>
+{% comment %} <div class="gallery-container">
+   <div class="image1"><img class="gallery-image" src="{{ section.settings.image1 | img_url: 'original' }}" alt="Image 1"/></div>
+   <div class="image2"><img class="gallery-image" src="{{ section.settings.image2 | img_url: 'original' }}" alt="Image 2" /></div>
+   <div class="image3"><img class="gallery-image" src="{{ section.settings.image3 | img_url: 'original' }}" alt="Image 3" /></div>
+   <div class="image4"><img class="gallery-image" src="{{ section.settings.image4 | img_url: 'original' }}" alt="Image 4" /></div>
+   <div class="image5"><img class="gallery-image" src="{{ section.settings.image5 | img_url: 'original' }}" alt="Image 5" /></div>
+   <div class="image6"><img class="gallery-image" src="{{ section.settings.image6 | img_url: 'original' }}" alt="Image 6" /></div>
+   <div class="image7"><img class="gallery-image" src="{{ section.settings.image7 | img_url: 'original' }}" alt="Image 7" /></div>
+   <div class="image8"><img class="gallery-image" src="{{ section.settings.image8 | img_url: 'original' }}" alt="Image 8" /></div>
+   <div class="image9"><img class="gallery-image" src="{{ section.settings.image9 | img_url: 'original' }}" alt="Image 9" /></div>
+   <div class="image10"><img class="gallery-image" src="{{ section.settings.image10 | img_url: 'original' }}" alt="Image 10" /></div>
+   <div class="image11"><img class="gallery-image" src="{{ section.settings.image11 | img_url: 'original' }}" alt="Image 11" /></div>
+   <div class="image12"><img class="gallery-image" src="{{ section.settings.image12 | img_url: 'original' }}" alt="Image 12" /></div>
+   <div class="image13"><img class="gallery-image" src="{{ section.settings.image13 | img_url: 'original' }}" alt="Image 13" /></div>
+   <div class="image14"><img class="gallery-image" src="{{ section.settings.image14 | img_url: 'original' }}" alt="Image 14" /></div>
+   <div class="image15"><img class="gallery-image" src="{{ section.settings.image15 | img_url: 'original' }}" alt="Image 15" /></div>
+   <div class="image16"><img class="gallery-image" src="{{ section.settings.image16 | img_url: 'original' }}" alt="Image 16" /></div>
+   <div class="image17"><img class="gallery-image" src="{{ section.settings.image17 | img_url: 'original' }}" alt="Image 17" /></div>
+   <div class="image18"><img class="gallery-image" src="{{ section.settings.image18 | img_url: 'original' }}" alt="Image 18" /></div>
+</div>  {% endcomment %}
+
+<div class="wrapper">
+    <div class="gallery-container">
+    <div class="image1"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/asian-small-clawed-otter-burton-mere-3-compressed.jpg" alt="Image 1"/></div>
+    <div class="image2"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/bullfinch-leighton-moss-4-compressed.jpg" alt="Image 2" /></div>
+    <div class="image3"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/chaffinch-f-burton-mere-compressed.jpg" alt="Image 3" /></div>
+    <div class="image4"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/chaffinch-leighton-moss-8-compressed.jpg" alt="Image 4" /></div>
+    <div class="image5"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/coot-chick-burton-mere-compressed.jpg" alt="Image 5" /></div>
+    <div class="image6"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/coot-with-chick-burton-mere-2-compressed.jpg" alt="Image 6" /></div>
+    <div class="image7"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/cormorant-reddish-vale-1-compressed.jpg" alt="Image 7" /></div>
+    <div class="image8"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/gadwall-leighton-moss-3-compressed.jpg" alt="Image 8" /></div>
+    <div class="image9"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/gadwall-or-mallard-chicks-burton-mere-compressed.jpg" alt="Image 9" /></div>
+    <div class="image10"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/greenfinch-leighton-moss-compressed.jpg" alt="Image 10" /></div>
+    <div class="image11"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/long-tailed-tit-fen-drayton-4-compressed.jpg" alt="Image 11" /></div>
+    <div class="image12"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/reed-bunting-st-aidens-compressed.jpg" alt="Image 12" /></div>
+    <div class="image13"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/red-deer-stag-mull-compressed.jpg" alt="Image 13" /></div>
+    <div class="image14"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/robin-leighton-moss-2-compressed.jpg" alt="Image 14" /></div>
+    <div class="image15"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/ruddy-shelduck-burton-mere-3-compressed.jpg" alt="Image 15" /></div>
+    <div class="image16"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/wood-duck-burton-mere-2-compressed.jpg" alt="Image 16" /></div>
+    <div class="image17"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/moorhen-burton-mere-compressed.jpg" alt="Image 17" /></div>
+    <div class="image18"><img class="gallery-image" src="https://d22cjjn8mu3b6d.cloudfront.net/mandarin-reddish-vale-compressed.jpg" alt="Image 18" /></div>
+    </div> 
+    {% comment %} Modal {% endcomment %}
+    <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01" src="" />
+    </div>
 </div>
-    
+
+<script>
+    // Get the modal
+var modal = document.getElementById("image-modal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementsByClassName("gallery-image");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+
+for (var i = 0; i < img.length; i++) {
+  img[i].onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src.replace("-compressed.jpg", "-large.jpg");
+  }
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
