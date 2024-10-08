@@ -380,6 +380,12 @@ function hideSpinner() {
     document.getElementById('img01').style.display = 'block';
     console.log("hide/show spinner/image")
 }
+
+function showSpinner() {
+    document.getElementById('spinner').style.display = 'block';
+    document.getElementById('img01').style.display = 'none';
+    console.log("hide/show spinner/image")
+}
     // Get the modal
 var modal = document.getElementById("image-modal");
 
@@ -402,6 +408,8 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
+  // toggle loader back to show
+showSpinner()
 }
 
 
