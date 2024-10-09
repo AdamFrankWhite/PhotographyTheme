@@ -229,14 +229,15 @@ img {
 } 
 
 /* blur until loaded */
-.blur-gallery {
-    filter: blur(10px);
-    transition: filter 0.3s ease-in-out; /* Smooth transition when unblurring */
+.blurred {
+   filter: blur(10px);
+   transition: filter 0.5s ease;
 }
 
-.blur-gallery.loaded {
-    filter: blur(0);
+.blurred.loaded {
+   filter: blur(0);
 }
+
 </style>
 
 {% schema %}
@@ -366,24 +367,24 @@ img {
 
 <div class="wrapper" id="portfolio">
     <div class="gallery-container">
-    <div class="image1"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/asian-small-clawed-otter-burton-mere-3-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/asian-small-clawed-otter-burton-mere-3-compressed.jpg" alt="Image 1"/></div>
-    <div class="image2"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/bullfinch-leighton-moss-4-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/bullfinch-leighton-moss-4-compressed.jpg" alt="Image 2" /></div>
-    <div class="image3"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/chaffinch-f-burton-mere-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/chaffinch-f-burton-mere-compressed.jpg" alt="Image 3" /></div>
-    <div class="image4"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/chaffinch-leighton-moss-8-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/chaffinch-leighton-moss-8-compressed.jpg" alt="Image 4" /></div>
-    <div class="image5"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/coot-chick-burton-mere-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/coot-chick-burton-mere-compressed.jpg" alt="Image 5" /></div>
-    <div class="image6"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/coot-with-chick-burton-mere-2-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/coot-with-chick-burton-mere-2-compressed.jpg" alt="Image 6" /></div>
-    <div class="image7"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/cormorant-reddish-vale-1-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/cormorant-reddish-vale-1-compressed.jpg" alt="Image 7" /></div>
-    <div class="image8"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/gadwall-leighton-moss-3-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/gadwall-leighton-moss-3-compressed.jpg" alt="Image 8" /></div>
-    <div class="image9"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/gadwall-or-mallard-chicks-burton-mere-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/gadwall-or-mallard-chicks-burton-mere-compressed.jpg" alt="Image 9" /></div>
-    <div class="image10"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/greenfinch-leighton-moss-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/greenfinch-leighton-moss-compressed.jpg" alt="Image 10" /></div>
-    <div class="image11"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/long-tailed-tit-fen-drayton-4-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/long-tailed-tit-fen-drayton-4-compressed.jpg" alt="Image 11" /></div>
-    <div class="image12"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/reed-bunting-st-aidens-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/reed-bunting-st-aidens-compressed.jpg" alt="Image 12" /></div>
-    <div class="image13"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/red-deer-stag-mull-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/red-deer-stag-mull-compressed.jpg" alt="Image 13" /></div>
-    <div class="image14"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/robin-leighton-moss-2-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/robin-leighton-moss-2-compressed.jpg" alt="Image 14" /></div>
-    <div class="image15"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/ruddy-shelduck-burton-mere-3-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/ruddy-shelduck-burton-mere-3-compressed.jpg" alt="Image 15" /></div>
-    <div class="image16"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/wood-duck-burton-mere-2-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/wood-duck-burton-mere-2-compressed.jpg" alt="Image 16" /></div>
-    <div class="image17"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/moorhen-burton-mere-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/moorhen-burton-mere-compressed.jpg" alt="Image 17" /></div>
-    <div class="image18"><img class="gallery-image blur-gallery" src="https://d22cjjn8mu3b6d.cloudfront.net/mandarin-reddish-vale-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/mandarin-reddish-vale-compressed.jpg" alt="Image 18" /></div>
+    <div class="image1"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/asian-small-clawed-otter-burton-mere-3-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/asian-small-clawed-otter-burton-mere-3-compressed.jpg" alt="Image 1"/></div>
+    <div class="image2"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/bullfinch-leighton-moss-4-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/bullfinch-leighton-moss-4-compressed.jpg" alt="Image 2" /></div>
+    <div class="image3"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/chaffinch-f-burton-mere-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/chaffinch-f-burton-mere-compressed.jpg" alt="Image 3" /></div>
+    <div class="image4"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/chaffinch-leighton-moss-8-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/chaffinch-leighton-moss-8-compressed.jpg" alt="Image 4" /></div>
+    <div class="image5"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/coot-chick-burton-mere-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/coot-chick-burton-mere-compressed.jpg" alt="Image 5" /></div>
+    <div class="image6"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/coot-with-chick-burton-mere-2-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/coot-with-chick-burton-mere-2-compressed.jpg" alt="Image 6" /></div>
+    <div class="image7"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/cormorant-reddish-vale-1-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/cormorant-reddish-vale-1-compressed.jpg" alt="Image 7" /></div>
+    <div class="image8"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/gadwall-leighton-moss-3-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/gadwall-leighton-moss-3-compressed.jpg" alt="Image 8" /></div>
+    <div class="image9"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/gadwall-or-mallard-chicks-burton-mere-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/gadwall-or-mallard-chicks-burton-mere-compressed.jpg" alt="Image 9" /></div>
+    <div class="image10"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/greenfinch-leighton-moss-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/greenfinch-leighton-moss-compressed.jpg" alt="Image 10" /></div>
+    <div class="image11"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/long-tailed-tit-fen-drayton-4-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/long-tailed-tit-fen-drayton-4-compressed.jpg" alt="Image 11" /></div>
+    <div class="image12"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/reed-bunting-st-aidens-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/reed-bunting-st-aidens-compressed.jpg" alt="Image 12" /></div>
+    <div class="image13"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/red-deer-stag-mull-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/red-deer-stag-mull-compressed.jpg" alt="Image 13" /></div>
+    <div class="image14"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/robin-leighton-moss-2-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/robin-leighton-moss-2-compressed.jpg" alt="Image 14" /></div>
+    <div class="image15"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/ruddy-shelduck-burton-mere-3-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/ruddy-shelduck-burton-mere-3-compressed.jpg" alt="Image 15" /></div>
+    <div class="image16"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/wood-duck-burton-mere-2-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/wood-duck-burton-mere-2-compressed.jpg" alt="Image 16" /></div>
+    <div class="image17"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/moorhen-burton-mere-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/moorhen-burton-mere-compressed.jpg" alt="Image 17" /></div>
+    <div class="image18"><img class="gallery-image lazyload blurred" src="https://d22cjjn8mu3b6d.cloudfront.net/mandarin-reddish-vale-lqip.jpg" data-src="https://d22cjjn8mu3b6d.cloudfront.net/mandarin-reddish-vale-compressed.jpg" alt="Image 18" /></div>
     </div> 
     {% comment %} Modal {% endcomment %}
     <div id="image-modal" class="modal">
@@ -441,43 +442,20 @@ span.onclick = function() {
    
 }
 
-// blur gallery until loaded
-// Add this script to your theme's custom JavaScript file or at the bottom of your HTML
-document.addEventListener("DOMContentLoaded", function () {
-    const images = document.querySelectorAll(".blur-gallery");
-    let imagesLoaded = 0;
+// lazy load low quality image placeholder (LQIP)
+document.addEventListener('DOMContentLoaded', () => {
+   const images = document.querySelectorAll('img.lazyload');
+   
+   images.forEach((img) => {
+      const highResImage = new Image();
+      highResImage.src = img.getAttribute('data-src');
 
-    images.forEach((img) => {
-        // Check if image is already loaded
-        if (img.complete) {
-            imagesLoaded++;
-        } else {
-            img.addEventListener('load', () => {
-                imagesLoaded++;
-                if (imagesLoaded === images.length) {
-                    removeBlur();
-                }
-            });
-
-            img.addEventListener('error', () => {
-                imagesLoaded++;
-                if (imagesLoaded === images.length) {
-                    removeBlur();
-                }
-            });
-        }
-    });
-
-    function removeBlur() {
-        images.forEach((img) => {
-            img.classList.add("loaded");
-        });
-    }
-
-    // If all images are already loaded at the time of running the script
-    if (imagesLoaded === images.length) {
-        removeBlur();
-    }
+      highResImage.onload = () => {
+         img.src = highResImage.src;
+         img.classList.add('loaded');
+      };
+   });
 });
+
 
 </script>
