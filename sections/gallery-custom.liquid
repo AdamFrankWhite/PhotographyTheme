@@ -218,7 +218,9 @@ img {
   border: 3px solid;
   border-color: #0095ff transparent;
 }
-
+.loader img {
+  padding: 20%;
+}
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -389,7 +391,7 @@ img {
     {% comment %} Modal {% endcomment %}
     <div id="image-modal" class="modal">
         <span class="close">&times;</span>
-        <span id="spinner" class="loader"></span>
+        <span id="spinner" class="loader"><img alt="loading icon" src="https://d22cjjn8mu3b6d.cloudfront.net/icons8-bird-67.png" /></span>
         <img class="modal-content" id="img01" src="" onload="hideSpinner()" style="display: none;" />
     </div>
 </div>
