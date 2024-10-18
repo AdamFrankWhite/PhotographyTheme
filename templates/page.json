@@ -1,23 +1,126 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "image_banner_rVzdww": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_yCbYeQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "text_RFKPbd": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "buttons_4GA48g": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_yCbYeQ",
+        "text_RFKPbd",
+        "buttons_4GA48g"
+      ],
+      "settings": {
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "rich_text_JjdXyi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_fnbJGH": {
+          "type": "heading",
+          "settings": {
+            "heading": "Adam Frank White",
+            "heading_size": "h1"
+          }
+        },
+        "heading_Ext7DA": {
+          "type": "heading",
+          "settings": {
+            "heading": "Photographer, writer, nature lover, animal lover.",
+            "heading_size": "h2"
+          }
+        },
+        "text_fh89Tz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>I was always intrigued by the natural world as a child. Finding colourful insects in the garden was a delight, as was reading nature books and being fortunate enough to be taken to butterfly houses and wildlife parks by my parents. <br/><br/>However, as I became an adult I lost touch with this connection and curiosity, and for many years had no real interest. I was too preoccupied attempting to navigate life, fit in, find a career and so on.<br/><br/>My love for nature photography began when I stumbled into bird photography a few years ago. I honestly cannot remember what prompted this. Perhaps the latent curiosity I had always had for the natural world could no longer be suppressed; perhaps it was the desire for a hobby that had a greater connection to the real world; for whatever reason, I decided to buy a cheap used Canon 7D and try my hand at bird photography. Around the same time, a friend introduced me to the world of mushrooms and from that point on I was hooked. Then came plants, tress, moss, lichen and pretty much all forms of life under the sun. One day I'd love to explore underwater photography.<br/><br/>The peace and quiet of nature, being a spectator to the majestic beauty and grace of the rich variety of life, honed through millions of years of evolution was to be privy to the most wonderful show on earth. A show that is always on, all around us, at any time. Capturing and sharing this beauty became an increasingly obsessive hobby. With the impact of human overpopulation and climate change, capturing and raising awareness of this wonder became increasingly urgent and my main focus in life.<br/><br/>I hope this enthusiasm and sense of wonder comes through in my photography and helps illuminate the beauty and intrinsic importance of the natural world. <br/><br/>Please enjoy.<br/></p>"
+          }
+        },
+        "button_mnnFtF": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_fnbJGH",
+        "heading_Ext7DA",
+        "text_fh89Tz",
+        "button_mnnFtF"
+      ],
+      "custom_css": [
+        "p {text-align: left;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "image_banner_rVzdww",
+    "rich_text_JjdXyi"
   ]
 }
