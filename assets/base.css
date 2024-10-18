@@ -213,6 +213,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 .visually-hidden--inline {
   margin: 0;
   height: 1em;
+
 }
 
 .overflow-hidden {
@@ -2538,6 +2539,7 @@ input[type='checkbox'] {
 
 .header__icon span {
   height: 100%;
+  padding-left: 1px;
 }
 
 .header__icon .svg-wrapper {
@@ -3522,6 +3524,8 @@ details-disclosure > details {
 .spinner {
   animation: rotator 1.4s linear infinite;
 }
+
+
 
 @keyframes rotator {
   0% {
