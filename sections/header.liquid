@@ -147,9 +147,21 @@
     opacity: 0.8;
     transition: opacity 0.2s ease-in-out;
   }
-  /* nav link hover effect */
+ 
+  @media screen and (max-width: 505px) {
+    .heading-title-wrapper .h1 {
+      font-size: 1.35em;
+    }
+    .heading-title-wrapper .h2 {
+      font-size: 1.15em;
+    }
+    .header-wrapper, .header {
+      padding-left: 0.75em!important;
+      padding-right: 0.75em!important;
 
-
+    }
+}
+ /* nav link hover effect */
   .hover-effect:after,
 .hover-effect:before {
   content: "";
