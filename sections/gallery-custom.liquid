@@ -27,6 +27,8 @@ img {
         width: 90%;
 }
 }
+
+@media screen and (min-width: 601px) {
 .image1 {
     grid-column: span 3 / span 3;
     grid-row: span 5 / span 5;
@@ -135,6 +137,135 @@ img {
     grid-column-start: 8;
     grid-row-start: 11;
 }
+}
+@media screen and (max-width: 600px) {
+   
+
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(38, 1fr);
+    gap: 8px;
+}
+    
+.image1 {
+    grid-column: span 2 / span 2;
+    grid-row: span 6 / span 6;
+}
+
+.image2 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-column-start: 3;
+}
+
+.image3 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-column-start: 3;
+    grid-row-start: 5;
+}
+
+.image4 {
+    grid-column: span 2 / span 2;
+    grid-row: span 8 / span 8;
+    grid-column-start: 3;
+    grid-row-start: 9;
+}
+
+.image5 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-column-start: 1;
+    grid-row-start: 7;
+}
+
+.image6 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-row-start: 11;
+}
+
+.image7 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-row-start: 15;
+}
+
+.image8 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-column-start: 3;
+    grid-row-start: 17;
+}
+
+.image9 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-row-start: 19;
+}
+
+.image10 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-column-start: 3;
+    grid-row-start: 21;
+}
+
+.image11 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-row-start: 23;
+}
+
+.image12 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-column-start: 3;
+    grid-row-start: 25;
+}
+
+.image13 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-row-start: 27;
+}
+
+.image14 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-column-start: 3;
+    grid-row-start: 29;
+}
+
+.image15 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-row-start: 31;
+}
+
+.image16 {
+    grid-column: span 2 / span 2;
+    grid-row: span 6 / span 6;
+    grid-column-start: 3;
+    grid-row-start: 33;
+}
+.image16 img {
+  object-position: 15%;
+}
+.image17 {
+    display: none;
+}
+
+.image18 {
+  grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-row-start: 35;
+}
+        
+        
+}
         
     /* The Modal (background) */
     .modal {
@@ -153,7 +284,8 @@ img {
 }
 
 .modal.show {
-  display: block; /* Show the modal */
+  display: flex; /* Show the modal */
+  align-items: center;
   opacity: 1; /* Fully visible */
   transition: opacity 0.3s ease; /* Matches the fade duration */
 }
@@ -166,8 +298,8 @@ img {
 .modal-content {
   margin: auto;
   display: block;
-  height: 100%;
-  width: auto;
+  height: auto;
+  width: 100%;
   max-width: 1480px;
   z-index: 4;
 }
@@ -420,7 +552,7 @@ var captionText = document.getElementById("caption");
 
 for (var i = 0; i < img.length; i++) {
   img[i].onclick = function(){
-    modal.style.display = "block";
+    modal.style.display = "flex";
     modal.classList.remove('hide'); // Remove the hide class if present
     modal.classList.add('show'); // Add the show class to trigger fade-in
     modalImg.src = this.src.replace("-compressed.jpg", "-large.jpg");
