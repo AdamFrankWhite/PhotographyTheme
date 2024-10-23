@@ -18,15 +18,15 @@
         "color_scheme": "scheme-1"
       }
     },
-    "featured_collection_i968Kk": {
+    "featured_collection_BTgTgW": {
       "type": "featured-collection",
       "settings": {
-        "title": "Prints",
+        "title": "Calendars",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "posters",
+        "collection": "calendars",
         "products_to_show": 4,
         "columns_desktop": 4,
         "full_width": false,
@@ -46,15 +46,15 @@
         "padding_bottom": 36
       }
     },
-    "featured_collection_BTgTgW": {
+    "featured_collection_i968Kk": {
       "type": "featured-collection",
       "settings": {
-        "title": "Calendars",
+        "title": "Prints",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "calendars",
+        "collection": "posters",
         "products_to_show": 4,
         "columns_desktop": 4,
         "full_width": false,
@@ -154,8 +154,8 @@
   },
   "order": [
     "banner",
-    "featured_collection_i968Kk",
     "featured_collection_BTgTgW",
+    "featured_collection_i968Kk",
     "featured_collection_q9axdb",
     "featured_collection_Mt9bmA",
     "product-grid"
